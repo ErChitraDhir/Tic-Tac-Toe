@@ -1,17 +1,21 @@
 name: Tic Tac Toe Tests
 
-on: [push]
+on: [push]  # This workflow runs on every push to the repository
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # This workflow runs on Ubuntu virtual machines
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python environment
-        uses: actions/setup-python@v3
+      - uses: actions/checkout@v3  # Checks out the code from the repository
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v3  # Sets up a Node.js environment
         with:
-          python-version: 3.9
+          node-version: 16  # You can adjust the Node.js version if needed
+
       - name: Install dependencies
-        run: pip install pytest
+        run: npm install  # Installs project dependencies (assuming you use npm)
+
       - name: Run tests
-        run: pytest tests.py
+        run: npm test  # Runs the tests defined in your project (replace with your actual test command)
+
