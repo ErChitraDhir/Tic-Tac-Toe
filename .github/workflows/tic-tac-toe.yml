@@ -1,0 +1,17 @@
+name: Tic Tac Toe Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python environment
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: pip install pytest
+      - name: Run tests
+        run: pytest tests.py
