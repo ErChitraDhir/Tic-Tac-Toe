@@ -13,9 +13,6 @@ jobs:
         with:
           node-version: 16  # You can adjust the Node.js version if needed
 
-      - name: Install dependencies
-        run: npm install  # Installs project dependencies (assuming you use npm)
-
       - name: Run tests
         run: npm test  # Runs the tests defined in your project (replace with your actual test command)
 
