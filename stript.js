@@ -3,7 +3,7 @@ const message = document.getElementById('message');
 
 let currentPlayer = 'X';
 let gameIsActive = true;
-
+//code 
 function handleCellClick(event) {
   const cellIndex = parseInt(event.target.dataset.cellIndex);
   const cell = cells[cellIndex];
