@@ -1,0 +1,31 @@
+name: Tic Tac Toe Game
+
+on: [push]
+
+jobs:
+  build_and_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' 
+
+    - name: Install dependencies (optional)
+      run: npm install 
+
+    - name: Build (optional)
+      run: npm run build  
+
+    - name: Deploy (optional)
+      uses: actions/deploy-github-pages@v4  
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages  
+        folder: dist  
+
+    - name: Run the game (for testing)
+      run: |
+        firefox index.html  # Or another browser you prefer
